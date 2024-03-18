@@ -1,9 +1,41 @@
 ---
+import Header from "../components/Header.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import HeroUnit from "../components/HeroUnit.astro";
+import Forurening from "../components/Forurening.astro";
+import Problemet from "../components/Problemet.astro";
+import HvadGørJeg from "../components/HvadGørJeg.astro";
+import Forskel from "../components/Forskel.astro";
+import Støt from "../components/Støt.astro";
+import Køb from "../components/Køb.astro";
+import Footer from "../components/Footer.astro";
 ---
+<!-- Header -->
+<Header/>
 
 <MainLayout title="Titel">
-  <article>
-    <p>Index indhold</p>
-  </article>
+<!-- Hero unit -->
+<HeroUnit/>
+
+<!-- Sektion 1 - Hvad er plastikforurening?-->
+<Forurening/>
+
+<!-- Sektion 2 - Hvad er problemet med plasticforurening?-->
+<Problemet/>
+
+<!-- Sektion 3 - Hvad kan brugeren gøre? -->
+<HvadGørJeg/>
+
+<!-- Sektion 4 - Hvordan gør Plastic Change en forskel?-->
+<Forskel/>
+
+<!-- Sektion 5 - Støt Plastic Change -->
+<Støt/>
+
+<!-- Sektion 6 - Merchandise -->
+<Køb/>
+
 </MainLayout>
+
+<!-- Footer -->
+<Footer/>
