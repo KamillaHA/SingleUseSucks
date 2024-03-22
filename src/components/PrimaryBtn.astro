@@ -1,0 +1,9 @@
+---
+const { variant = "primary" } = Astro.props;
+const buttonStyling = "text-white rounded-xl p-2 px-4";
+const variantClasses = {
+  primary: "bg-rod hover:bg-hoverrod active:clickrod",
+};
+---
+
+<button class:list={[buttonStyling, variantClasses[variant]]}><slot /></button>
