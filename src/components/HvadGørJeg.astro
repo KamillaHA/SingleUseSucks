@@ -1,3 +1,47 @@
 ---
 import PrimaryBtn from "../components/PrimaryBtn.astro";
+import { Image } from "astro:assets";
+import Spand from "../assets/images/spand.svg";
+import Flasker from "../assets/images/flasker.svg";
 ---
+
+<section id="HvadGørJeg" class="mt-40 mb-40">
+  <div class="grid grid-cols-7 py-40 bg-cleanup-img bg-[cover]">
+    <!-- Fotos af Thirdman:
+https://www.pexels.com/da-dk/foto/natur-haender-folk-jord-7656748/ -->
+    <p
+      class="col-start-2 col-span-5 text-center bg-white/75 px-10 p-6 rounded-xl leading-relaxed"
+    >
+      Alle kan gøre noget, men ingen kan gøre alt. Det hele starter med DIG, de
+      ændringer, du kan skabe i din hverdag, og hvordan du kan og har lyst til
+      at støtte plastik-sagen. Du bliver helt automatisk en del af Plastic
+      Changer bevægelsen, så snart du laver en adfærdsændring i din hverdag,
+      bruger dine faglige kompetencer til at støtte plastik-sagen, arrangerer
+      eller støtter op om en aktivitet i dit lokalområde osv.
+    </p>
+    <div class="col-start-6 mt-10 flex justify-end pr-4">
+      <PrimaryBtn><a href="#Støt">Støt her</a></PrimaryBtn>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 mt-60">
+    <p class="col-start-1 ml-36 mt-40 leading-relaxed text-center">
+      Dit bidrag som Plastic Changer kan være alt fra at samle affald, mens du
+      lufter din hund, arrangere en lokal affaldsoprydning, tage billeder eller
+      lave film, engagere dine lokalpolitikere – og alt herimellem, der sætter
+      fokus på problemet med plastikforurening.
+    </p>
+    <div class="image-container relative">
+      <div class="col-start-2 flex justify-center">
+        <Image src={Flasker} alt="" class="flasker-img w-36 z-0" />
+      </div>
+      <div class="col-start-2 flex justify-center">
+        <Image src={Spand} alt="" class="spand-img w-56 z-10" />
+      </div>
+    </div>
+  </div>
+  <p class="font-bold text-center mt-60 text-2xl">
+    Kort sagt:<br /> Du kan engagere dig på forskellige niveauer,<br /> lige som
+    det passer dig og dine behov og ambitioner bedst.
+  </p>
+</section>
