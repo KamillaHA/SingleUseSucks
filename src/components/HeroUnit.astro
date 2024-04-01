@@ -1,3 +1,17 @@
-<section id="Herounit">
-    <h2></h2>
-  </section>
+---
+import { Image } from 'astro:assets';
+import hero from "../assets/images/hero.svg"
+import Button from './PrimaryBtn.astro';
+import Button2 from './SecondaryBtn.astro';
+---
+
+<section id="Herounit" class="relative h-screen overflow-hidden">
+    <div class="w-full h-screen">
+        <Image src={hero} alt="digital clean up billed." class="w-full h-full object-cover" />
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 flex justify-center pb-8">
+        <Button>Støt her</Button>
+    </div>
+</section>
+
