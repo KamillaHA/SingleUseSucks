@@ -1,14 +1,42 @@
-<nav class="flex justify-between items-center py-4 bg-black">
-    <a href="/" class="ml-8">
-      <img class="w-48 h-16" src="/logo.png" alt="logo"/>
-    </a>
+<div x-data="navbar">
   
-    <ul class="flex gap-4 p-6">
-      <li class="text-[#FF1054] font-bold p-8"><a href="#Forurening">Hvad er plastikforurening?</a></li>
+  <nav class="flex justify-between items-center py-4 bg-black">
+  <a href="/" class="ml-8">
+    <img class="w-48 h-16" src="/logo.png" alt="logo"/>
+  </a>
+
+  <button id="burgermenu" class="lg:hidden text-white px-8" x-on:click="showmenu = !showmenu">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+    </svg>
+  </button>
+
+  <!-- Desktop -->
+  <ul class="hidden lg:flex gap-4 p-6">
+    <li class="text-[#FF1054] font-bold p-8"><a href="#Forurening">Hvad er plastikforurening?</a></li>
       <li class="text-[#FF1054] font-bold p-8"><a href="#Problemet">Problemet</a></li>
       <li class="text-[#FF1054] font-bold p-8"><a href="#HvadGørJeg">Hvad kan man gøre?</a></li>
       <li class="text-[#FF1054] font-bold p-8"><a href="#Forskel">Hvad gør Plastic Change?</a></li>
       <li class="text-[#FF1054] font-bold p-8"><a href="#Støt">Støt</a></li>
-    </ul>
-  </nav>
-  
+  </ul>
+</nav>
+
+<!-- Mobile -->
+<nav id="mobilmenu" class="lg:hidden flex flex-col content-center list-none absolute bg-black w-full" x-show="showmenu" x-transition x-on:click.away="showmenu = false">
+  <ul class="flex flex-col items-center p-6">
+    <li class="text-[#FF1054] font-bold p-8"><a href="#Forurening">Hvad er plastikforurening?</a></li>
+      <li class="text-[#FF1054] font-bold p-8"><a href="#Problemet">Problemet</a></li>
+      <li class="text-[#FF1054] font-bold p-8"><a href="#HvadGørJeg">Hvad kan man gøre?</a></li>
+      <li class="text-[#FF1054] font-bold p-8"><a href="#Forskel">Hvad gør Plastic Change?</a></li>
+      <li class="text-[#FF1054] font-bold p-8"><a href="#Støt">Støt</a></li>
+  </ul>
+</nav>
+</div>
+
+<script>
+    document.addEventListener('alpine:init', () => {
+  Alpine.data('navbar', () => ({
+    showmenu: false
+  }));
+});
+</script>
