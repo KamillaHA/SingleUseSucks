@@ -3,8 +3,10 @@ import { Image } from "astro:assets";
 import Logoer from "../assets/images/stotte.webp";
 ---
 
-<section id="Forskel" class="mt-40 mb-40">
-  <div class="grid grid-cols-7 py-60 bg-gronverden bg-[cover]">
+<section id="Forskel" class="mt-40 mb-40 parallaxcontainer">
+  <div
+    class="grid grid-cols-7 py-60 bg-gronverden bg-[cover] parallaxcontainer"
+  >
     <!-- Fotos af Jess Ruyter: https://www.pexels.com/da-dk/foto/natur-skov-traeer-miljo-9413489/ -->
     <p
       class="col-start-2 col-span-3 text-center bg-white/75 px-10 p-6 rounded-xl leading-relaxed"
@@ -24,3 +26,31 @@ import Logoer from "../assets/images/stotte.webp";
     <Image src={Logoer} alt="" class="col-start-6 col-span-2" />
   </div>
 </section>
+
+<style>
+  .parallaxcontainer {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+
+<script>
+  // JavaScript code to be executed once the DOM is loaded
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select all elements with class .parallaxcontainer
+    const parallaxContainers = document.querySelectorAll(".parallaxcontainer");
+
+    // Loop through each .parallaxcontainer element
+    parallaxContainers.forEach((parallaxcontainer) => {
+      // Add scroll event listener
+      parallaxcontainer.addEventListener("scroll", function () {
+        // Get the scroll position of the container
+        let scrollTop = parallaxcontainer.scrollTop;
+        // Adjust background position based on scroll position
+        parallaxcontainer.style.backgroundPositionY = `${scrollTop * 0.5}px`;
+      });
+    });
+  });
+</script>

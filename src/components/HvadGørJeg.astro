@@ -3,11 +3,13 @@ import PrimaryBtn from "../components/PrimaryBtn.astro";
 import { Image } from "astro:assets";
 import Spand from "../assets/images/spand.svg";
 import Flasker from "../assets/images/flasker.svg";
-import "../styles/global.css"
+import "../styles/global.css";
 ---
 
-<section id="HvadGørJeg" class="mt-40 mb-40">
-  <div class="grid grid-cols-7 py-40 bg-cleanup-img bg-[cover]">
+<section id="HvadGørJeg" class="mt-40 mb-40 parallaxcontainer">
+  <div
+    class="grid grid-cols-7 parallaxcontainer py-40 bg-cleanup-img bg-[cover]"
+  >
     <!-- Fotos af Thirdman:
 https://www.pexels.com/da-dk/foto/natur-haender-folk-jord-7656748/ -->
     <p
@@ -43,3 +45,31 @@ https://www.pexels.com/da-dk/foto/natur-haender-folk-jord-7656748/ -->
     det passer dig og dine behov og ambitioner bedst.
   </p>
 </section>
+
+<style>
+  .parallaxcontainer {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+
+<script>
+  // JavaScript code to be executed once the DOM is loaded
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select all elements with class .parallaxcontainer
+    const parallaxContainers = document.querySelectorAll(".parallaxcontainer");
+
+    // Loop through each .parallaxcontainer element
+    parallaxContainers.forEach((parallaxcontainer) => {
+      // Add scroll event listener
+      parallaxcontainer.addEventListener("scroll", function () {
+        // Get the scroll position of the container
+        let scrollTop = parallaxcontainer.scrollTop;
+        // Adjust background position based on scroll position
+        parallaxcontainer.style.backgroundPositionY = `${scrollTop * 0.5}px`;
+      });
+    });
+  });
+</script>
