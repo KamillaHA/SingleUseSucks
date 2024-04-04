@@ -1,63 +1,93 @@
 ---
-import { Image } from 'astro:assets';
-import section1_1 from '../assets/images/Section1_1.svg';
-import section1_2 from "../assets/images/Section1_2.svg"
-import section1_3 from "../assets/images/Section1_3.svg"
-import Button from './PrimaryBtn.astro';
-import Button2 from './SecondaryBtn.astro';
+import { Image } from "astro:assets";
+import section1_1 from "../assets/images/Section1_1.svg";
+import section1_2 from "../assets/images/Section1_2.svg";
+import section1_3 from "../assets/images/Section1_3.svg";
+import PrimaryBtn from "./PrimaryBtn.astro";
 ---
 
 <section id="Forurening">
+  <!-- prøver med en bredte på 6 -->
+  <section
+    class="px-8 py-20 mt-20 grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto"
+    id="section3"
+  >
+    <div class="grid gap-8">
+      <h2
+        class="text-sky-950 font-bold text-3x text-center animate__animated animate__pulse animate__infinite infinite"
+      >
+        Hvad er plastikforurening?
+      </h2>
+      <article>
+        <p class="text-sky-950 text-lg text-center font-bold">
+          Siden 1950’erne har vi produceret mere end 9 milliarder ton plastik.
+          Heraf er størstedelen blevet brugt til engangsemballager og -produkter
+          med kort levetid og lav markedsværdi.
+        </p>
+      </article>
+    </div>
 
-    <!-- prøver med en bredte på 6 -->
-    <section class="px-8 py-20 mt-20 grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto " id="section3">
-        <div class="grid gap-8">
-            <h2 class="text-sky-950 font-bold text-3xl text-green-800 text-center animate__animated animate__pulse animate__infinite infinite">Hvad er plastikforurening?</h2>	
-            <article>
-                <p class="text-sky-950 text-lg text-center font-bold ">Siden 1950’erne har vi produceret mere end 9 milliarder ton plastik. Heraf er størstedelen blevet brugt til engangsemballager og -produkter med kort levetid og lav markedsværdi.</p>
-            </article>
-        </div>
-        
-        <div class="self-center">
-            <Image src={section1_1} alt="billede1" class="inline" />
-        </div>
-        
-    </section>
+    <div class="self-center">
+      <Image src={section1_1} alt="billede1" class="inline" />
+    </div>
+  </section>
 
-    <section class="px-8 py-20 mt-20 grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto" id="section3">
-        <div class="self-center">
-            <Image src={section1_2} alt="billede2" class="inline" />
-        </div>
+  <section
+    class="px-8 py-20 mt-20 grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto"
+    id="section3"
+  >
+    <div class="self-center">
+      <Image src={section1_2} alt="billede2" class="inline" />
+    </div>
 
-        <div class="grid gap-8">
-            <h2 class="text-sky-950 font-bold text-3xl text-green-800 text-center animate__animated animate__tada animate__infinite infinite"></h2>
-            <article>
-                <p class="text-sky-950 text-lg text-center font-bold">Disse emballager og produkter forurener i hele deres livscyklus: fra udvindingen af olie, til produktion, transport, forbrug, og når de ender til forbrænding eller i naturen. Alt dette for kun at blive brugt én gang</p>
-            </article>
-        </div>
-    </section>
+    <div class="grid gap-8">
+      <h2
+        class="text-sky-950 font-bold text-3xl text-center animate__animated animate__tada animate__infinite infinite"
+      >
+      </h2>
+      <article>
+        <p class="text-sky-950 text-lg text-center font-bold">
+          Disse emballager og produkter forurener i hele deres livscyklus: fra
+          udvindingen af olie, til produktion, transport, forbrug, og når de
+          ender til forbrænding eller i naturen. Alt dette for kun at blive
+          brugt én gang
+        </p>
+      </article>
+    </div>
+  </section>
 
-    <section class="px-8 py-20 mt-20 grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto " id="section3">
-        <div class="grid gap-8">
-            <h2 class="text-sky-950 font-bold text-3xl text-green-800 text-center animate__animated animate__tada animate__infinite infinite"></h2>	
-            <article>
-                <p class="text-sky-950 text-lg text-center font-bold">Indenfor de næste 20 år forventes den globale plastikproduktion at fordobles, og i samme periode forventes plastikforureningen at firedobles.Derfor skal vi have lukket for hanen med engangsplastik nu.</p>
-            </article>
-        </div>
-        
-        <div class="self-center">
-            <Image src={section1_3} alt="billede3" class="inline" />
-        </div>
-        
-    </section>
+  <section
+    class="px-8 py-20 mt-20 grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto"
+    id="section3"
+  >
+    <div class="grid gap-8">
+      <h2
+        class="text-sky-950 font-bold text-3xl text-center animate__animated animate__tada animate__infinite infinite"
+      >
+      </h2>
+      <article>
+        <p class="text-sky-950 text-lg text-center font-bold">
+          Indenfor de næste 20 år forventes den globale plastikproduktion at
+          fordobles, og i samme periode forventes plastikforureningen at
+          firedobles.Derfor skal vi have lukket for hanen med engangsplastik nu.
+        </p>
+      </article>
+    </div>
 
-    <!-- New section with the box -->
-    <section class="px-8 py-10 flex justify-center">
-        <div class="bg-gray-200 rounded-lg p-10 text-center">
-            <p class="text-sm font-bold">Du kan lave en engangsdonation eller oprette en medlemsskab her</p>
-            <div class="mt-10">
-            <Button>Støt her</Button>
-            </div>
-        </div>
-    </section>
+    <div class="self-center">
+      <Image src={section1_3} alt="billede3" class="inline" />
+    </div>
+  </section>
+
+  <!-- New section with the box -->
+  <section class="px-8 py-10 flex justify-center">
+    <div class="bg-gray-200 rounded-lg p-10 text-center">
+      <p class="text-sm font-bold">
+        Du kan lave en engangsdonation eller oprette en medlemsskab her
+      </p>
+      <div class="mt-10">
+        <PrimaryBtn><a href="#Støt">Støt her</a></PrimaryBtn>
+      </div>
+    </div>
+  </section>
 </section>
