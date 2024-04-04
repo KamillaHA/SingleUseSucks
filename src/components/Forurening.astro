@@ -9,7 +9,7 @@ import PrimaryBtn from "./PrimaryBtn.astro";
 <section id="Forurening">
   <!-- prøver med en bredte på 6 -->
   <section
-    class="px-8 py-20 mt-20 grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto"
+    class="px-8 py-20 mt-20 grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto parallaxcontainer"
     id="section3"
   >
     <div class="grid gap-8">
@@ -28,16 +28,16 @@ import PrimaryBtn from "./PrimaryBtn.astro";
     </div>
 
     <div class="self-center">
-      <Image src={section1_1} alt="billede1" class="inline" />
+      <Image src={section1_1} alt="billede1" class="inline" class="section1_1" />
     </div>
   </section>
 
   <section
-    class="px-8 py-20 mt-20 grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto"
+    class="px-8 py-20 mt-20 grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto parallaxcontainer"
     id="section3"
   >
     <div class="self-center">
-      <Image src={section1_2} alt="billede2" class="inline" />
+      <Image src={section1_2} alt="billede2" class="inline" class="section1_2"/>
     </div>
 
     <div class="grid gap-8">
@@ -57,7 +57,7 @@ import PrimaryBtn from "./PrimaryBtn.astro";
   </section>
 
   <section
-    class="px-8 py-20 mt-20 grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto"
+    class="px-8 py-20 mt-20 grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto parallaxcontainer"
     id="section3"
   >
     <div class="grid gap-8">
@@ -75,7 +75,7 @@ import PrimaryBtn from "./PrimaryBtn.astro";
     </div>
 
     <div class="self-center">
-      <Image src={section1_3} alt="billede3" class="inline" />
+      <Image src={section1_3} alt="billede3" class="inline" class="section1_3"/>
     </div>
   </section>
 
@@ -91,3 +91,28 @@ import PrimaryBtn from "./PrimaryBtn.astro";
     </div>
   </section>
 </section>
+
+<script>
+/* Import af Motion One bibliotek */
+import { animate, stagger, inView, scroll, timeline } from "motion";
+
+    inView( ".section1_1" , () =>{
+  animate( ".section1_1", { x: [-2000, 0 ] }, { duration: 2 })
+})
+
+    inView( ".section1_2" , () =>{
+  animate( ".section1_2", { x: [-2000, 0 ] }, { duration: 3 })
+})
+
+    inView( ".section1_3" , () =>{
+  animate( ".section1_3", { x: [-2000, 0 ] }, { duration: 4 })
+})
+
+document.querySelectorAll(".parallaxcontainer").forEach(( parallaxcontainer ) => {
+  const elementderskalparallaxes = parallaxcontainer.querySelector("p");
+  scroll(animate(elementderskalparallaxes, { y: [50, 500] }), {
+    target: elementderskalparallaxes
+  });
+});
+</script>
+
