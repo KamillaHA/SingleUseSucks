@@ -3,15 +3,29 @@ import { Image } from 'astro:assets';
 import hero from "../assets/images/hero_uden_tekst.svg"
 import Button from './PrimaryBtn.astro';
 import Button2 from './SecondaryBtn.astro';
+import "../styles/global.css"
 ---
 
 <section id="Herounit" class="relative h-screen overflow-hidden">
-    <div class="w-full h-screen">
+    <div class="w-full h-screen relative">
         <Image src={hero} alt="digital clean up billed." class="w-full h-full object-cover" />
+        <h1 class=" text-sky-950 absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-6xl font-bold text-center">
+            Sammen om en <span class="inline-block animate-wave">verden</span> uden <span class="inline-block animate-wave">plastikforurening</span>
+        </h1>
+        <h2 class=" text-sky-950 absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-1/3 text-white text-lg font-bold text-center">
+            Støt os i kampen mod plastik i havet
+        </h2>
+    
     </div>
 
     <div class="absolute bottom-0 left-0 right-0 flex justify-center pb-8">
         <Button>Støt her</Button>
     </div>
 </section>
+
+
+
+
+
+
 
