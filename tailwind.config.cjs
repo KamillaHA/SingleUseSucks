@@ -19,6 +19,10 @@ module.exports = {
         clickgron: "#006261",
       },
       fontFamily: {},
+      backgroundImage: {
+        "cleanup-img": "url('/src/assets/images/clean.jpg')",
+        gronverden: "url('/src/assets/images/gronverden.jpg')",
+      },
     },
   },
 };

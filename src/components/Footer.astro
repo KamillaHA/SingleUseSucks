@@ -1,6 +1,31 @@
 ---
-
+import SecondaryBtn from "./SecondaryBtn.astro";
+import { Image } from "astro:assets";
+import Face from "../assets/images/face.svg";
+import Insta from "../assets/images/insta.svg";
+import Linked from "../assets/images/linked.svg";
 ---
-<div>
-  <p>Tilmeld nyhedsbrev / følg på SoMe</p>
+
+<div class="grid grid-cols-10 mt-20 mb-40">
+  <div class="col-start-2 col-span-3">
+    <p
+      class="col-start-2 col-span-1 font-bold text-center mt-60 text-2xl mb-24"
+    >
+      Følg med i vores kamp mod plastikforurening på vores sociale medier
+    </p>
+    <div class="flex cursor-pointer">
+      <Image src={Face} alt="" class="flasker-img w-22 z-0 ml-12" />
+      <Image src={Insta} alt="" class="flasker-img w-22 z-0 ml-12" />
+      <Image src={Linked} alt="" class="flasker-img w-22 z-0 ml-12" />
+    </div>
+  </div>
+
+  <div class="col-start-7 col-span-3 align-center">
+    <p class="font-bold text-center mt-60 text-2xl mb-32">
+      Du kan også tilmelde dig vores nyhedsbrev her
+    </p>
+    <div class="ml-24">
+      <SecondaryBtn>Tilmeld nyhedsbrev</SecondaryBtn>
+    </div>
+  </div>
 </div>
